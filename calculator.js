@@ -131,17 +131,17 @@ function Calculator(inputString) {
  var printOriginalVisitor = new PrintOriginalVisitor()
  console.log(tree.accept(printOriginalVisitor));
 
- // var calculator = new Calculator("(3)");
+ var calculator = new Calculator("(3)");
 
- // make a fake version of parseExpression
- // var fakeExpressionTreeNode = new TreeNode("Expression", "3");
- // calculator.parseExpression = function() {
- //   this.get(); // remove the 3 when parseFactor runs
- //   return fakeExpressionTreeNode;
- // }
- //
- // var output = calculator.parseFactor();
- // // console.log(output)
- // check that
- // output.name == "Factor"
- // output.children = ["(", fakeExpressionTreeNode,
+ make a fake version of parseExpression
+ var fakeExpressionTreeNode = new TreeNode("Expression", "3");
+ calculator.parseExpression = function() {
+   this.get(); // remove the 3 when parseFactor runs
+   return fakeExpressionTreeNode;
+ }
+
+ var output = calculator.parseFactor();
+ // console.log(output)
+ check that
+ output.name == "Factor"
+ output.children = ["(", fakeExpressionTreeNode,
